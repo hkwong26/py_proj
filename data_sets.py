@@ -5,10 +5,7 @@ print(my_list)
 
 my_lett = ["a", "b", "c", "d", "e"]
 my_dict = zip(my_list,my_lett)
-list(my_dict)
-
-num, lett = zip(*my_dict2)
-print(f"numbers {num} and letters {lett} ")
+print(list(my_dict))
 
 my_dict2 = dict(list(enumerate(my_lett)))
 print(my_dict2)
