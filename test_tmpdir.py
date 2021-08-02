@@ -1,3 +1,0 @@
-def test_tmpdir(tmpdir):
-    print(tmpdir)
-    assert 0
