@@ -1,20 +1,14 @@
 """Play around with OOP """
 
-class FirstClass:
-    pass
+class FirstClass():
 
-class SecondClass:
+    def __init__(self, var1, var2):
+        self.variable1= var1
+        self.variable2= var2 # unique instance variables
+        self.const1 = 100
+        self.thatthing='what is it?'
     
-    def __init__(self) -> None:
-        pass
-
-    def __call__(self, *args: str, **kwds: str) -> None:
-        pass
-
-    def __repr__(self) -> str:
-        pass
-
-    def __str__(self) -> str:
-        pass
-
+    def class_method1(self):
+        print(f'class_method1 with instance method')
+    
 
