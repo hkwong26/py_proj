@@ -8,8 +8,10 @@ Creation design pattern, which allows construction of complex objects step by st
 """
 
 from __future__ import annotations
+
 from abc import ABC, abstractmethod
 from typing import Any
+
 
 class Builder(ABC):
     """
@@ -33,6 +35,7 @@ class Builder(ABC):
     def product_part_c(self) -> None:
         pass
 
+
 class ConcreteBuilder1(Builder):
     """
     The Concrete Builder classes follow the Builder interface and provide specific implementations of the building steps. Your program may have several variations of Builders, implemented differently
@@ -43,10 +46,10 @@ class ConcreteBuilder1(Builder):
         A fresh builder instance should contain a blank product object, which is used in further assembly.
         """
         self.reset()
-    
+
     def reset(self) -> None:
         self._product = Product1()
-    
+
     @property
     def product(self) -> Product1:
         """
@@ -60,15 +63,16 @@ class ConcreteBuilder1(Builder):
         return product
 
     def product_part_a(self) -> None:
-        self._product.add('PartA1')
+        self._product.add("PartA1")
 
     def product_part_b(self) -> None:
-        self._product.add('PartB1')
+        self._product.add("PartB1")
 
     def product_part_c(self) -> None:
-        self._product.add('PartC1')
+        self._product.add("PartC1")
 
-class Product1():
+
+class Product1:
     """
     It makes sense to use the Builder pattern only when your products are quite complex and require entensive configuration.
 
@@ -83,6 +87,7 @@ class Product1():
 
     def list_parts(self) -> None:
         print(f"Product parts: {','.join(self.parts)}", end="")
+
 
 class Director:
     """
@@ -115,6 +120,7 @@ class Director:
         self.builder.product_part_b()
         self.builder.product_part_c()
 
+
 if __name__ == "__main__":
     """
     The client code creates a builder object, passse it to the director and then initates the construction process. The end result is tretrieved from the builder object.
@@ -124,20 +130,20 @@ if __name__ == "__main__":
     builder = ConcreteBuilder1()
     director.builder = builder
 
-    print('Standard basic product: ')
+    print("Standard basic product: ")
     director.build_minimal_viable_product()
     builder.product.list_parts()
 
-    print('\n')
+    print("\n")
 
-    print('Standard full feature product: ')
+    print("Standard full feature product: ")
     director.build_full_featured_product()
     builder.product.list_parts()
 
-    print('\n')
+    print("\n")
 
-    #Remember, the Builder pattern can be used without a Director class.
-    print('Custom product: ')
+    # Remember, the Builder pattern can be used without a Director class.
+    print("Custom product: ")
     builder.product_part_a()
     builder.product_part_b()
     builder.product.list_parts()
