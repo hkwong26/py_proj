@@ -3,7 +3,10 @@
 Just play around with different aspects of Python Coding.
 - Beginners
   - List, Dict, Tuples, Sets
+    -- When and where to best utilize them
+    -- Think about how to combine with others
   - If/Else, for/while, 
+    -- Proper for loop utilization
   - Functions, Classes, Modules
   - Import OS, Datetime, randon, File Objects
   - Setup, package handling, f-string
@@ -24,4 +27,5 @@ Virtual Environments
 - Modules
 - Setup
 - Deliverables
+
 
