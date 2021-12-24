@@ -2,7 +2,7 @@
 
 istrue = False
 
-# EARP more Pythonic way 
+# EARP more Pythonic way
 # Faster and quicker way to determine the issue
 # Readbility and cleaner, Avoid race conditions
 try:

@@ -1,15 +1,16 @@
 import logging
 import threading
 
+
 def worker(event):
     while not event.isSet():
         logging.debug("worker thread checking in")
         event.wait(1)
 
+
 def main():
     logging.basicConfig(
-        level=logging.DEBUG,
-        format="%(relativeCreated)6d %(threadName)s %(message)s"
+        level=logging.DEBUG, format="%(relativeCreated)6d %(threadName)s %(message)s"
     )
     event = threading.Event()
 
@@ -25,6 +26,7 @@ def main():
         except KeyboardInterrupt:
             event.set()
             break
+
 
 if __name__ == "__main__":
     main()
