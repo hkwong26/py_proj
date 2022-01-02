@@ -25,5 +25,6 @@ array_list.pop()
 array_list.pop()
 cnt = array_list.count(" ")
 array_list.extend(["extent", 3, 3.42, "first"])
+new_list = array_list.copy
 
 set_stuf = set()
