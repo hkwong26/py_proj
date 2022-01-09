@@ -9,7 +9,4 @@ class Animal(ABC):
     @abstractmethod
     def ab_method1(self):
         pass
-
-    @abstractmethod
-    def ab_method2(self):
-        pass
+\

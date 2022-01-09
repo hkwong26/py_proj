@@ -13,33 +13,43 @@ class Dog(Animal):
         Explicitly state what data the class is holding within the class
         by placing the self.variables inside this constructor
         """
-        self.first_name = name
-        self.color = color
-        self.age = None
-        self.type = None
+        self._first_name: str = name
+        self._color: str = color
+        self._age: int = None
+        self._type: Animal = None
+
+    def __repr__(self):
+        return f"Dog({self._first_name!r}, {self._color!r})"
+
+    def __str__(self):
+        return f"Dog({self._first_name}, {self._color})"
 
     def ab_method1(self):
         print("Bark")
-
-    def ab_method2(self):
-        print("Woof")
 
     def new_method3(self):
         print("Growl")
 
     @property
     def name(self):
-        print(f"@property getter for name")
-        return self.first_name
+        return self._first_name
+
+    @classmethod
+    def all_dog(cls, input):
+        return cls(input)
+
+    @staticmethod
+    def nothing_related():
+        print(f"This is a static method that is independent of cls or self")
+        return f"static method return"
 
 
 if __name__ == "__main__":
 
     dog = Dog("frank", "black")
-    print(f"Dog's name is {dog.name} and the color ir {dog.color}")
-    bark = dog.ab_method1
-    woof = dog.ab_method2
-    bark()
-    woof()
-    dog.new_method3()
-    what_is_the_name = dog.name
+    dog2 = Dog.all_dog("Tommy")
+    print(dog2.name)
+    print(dog.name)
+    print(repr(dog))
+    print(dog)
+    dog.nothing_related()
